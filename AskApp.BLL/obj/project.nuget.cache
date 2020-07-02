@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/Wk5hs/gHZX3juLqVQZKOcdCbPduef6UaUquSQRFi8i9JJMmPVQLImIAPiH/a8WdztMMNB0Q3jG5Zqn510R8Yw==",
+  "dgSpecHash": "G2gqBqpsa7zd3RTo/bRkwR8mSatHJ0gwKZQDZEmTXNZhdQAVK/CE/JA2k/xt05LIppHsE7QmZmMyfucuFkP7Rw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Delep\\source\\repos\\AskApp\\AskApp\\AskApp.UI.csproj",
+  "projectFilePath": "C:\\Users\\Delep\\source\\repos\\AskApp\\AskApp.BLL\\AskApp.BLL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Delep\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\Delep\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",

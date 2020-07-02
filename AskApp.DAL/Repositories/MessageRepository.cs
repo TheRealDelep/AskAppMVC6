@@ -10,6 +10,7 @@ namespace AskApp.DAL.Repositories
     public class MessageRepository : IRepository<MessageEntity>
     {
         private AskAppContext context;
+        private bool disposedValue;
 
         public MessageRepository(AskAppContext context)
         {
