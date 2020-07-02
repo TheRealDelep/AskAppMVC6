@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "zhwAnudBipNgeKrUf1i3YD//GhH6nn4vC1/Lj7zOVuBHRou8//C7UwIfLpVDAMPTaDchvn+Tf6RYKSh5T42GGA==",
+  "dgSpecHash": "nQOAqnIWysAKTIpkQVDcFLeb8fUStpXl44HbOHOKY0v3TVbffqPJUuFkUWaQ210k8U1ahNwqAsYVMtDj1XsuyA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Delep\\source\\repos\\AskApp\\AskApp.DAL\\AskApp.DAL.csproj",
   "expectedPackageFiles": [
@@ -13,6 +13,7 @@
     "C:\\Users\\Delep\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\3.1.5\\microsoft.entityframeworkcore.abstractions.3.1.5.nupkg.sha512",
     "C:\\Users\\Delep\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\3.1.5\\microsoft.entityframeworkcore.analyzers.3.1.5.nupkg.sha512",
     "C:\\Users\\Delep\\.nuget\\packages\\microsoft.entityframeworkcore.design\\3.1.5\\microsoft.entityframeworkcore.design.3.1.5.nupkg.sha512",
+    "C:\\Users\\Delep\\.nuget\\packages\\microsoft.entityframeworkcore.inmemory\\3.1.5\\microsoft.entityframeworkcore.inmemory.3.1.5.nupkg.sha512",
     "C:\\Users\\Delep\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\3.1.5\\microsoft.entityframeworkcore.relational.3.1.5.nupkg.sha512",
     "C:\\Users\\Delep\\.nuget\\packages\\microsoft.entityframeworkcore.sqlite\\3.1.5\\microsoft.entityframeworkcore.sqlite.3.1.5.nupkg.sha512",
     "C:\\Users\\Delep\\.nuget\\packages\\microsoft.entityframeworkcore.sqlite.core\\3.1.5\\microsoft.entityframeworkcore.sqlite.core.3.1.5.nupkg.sha512",

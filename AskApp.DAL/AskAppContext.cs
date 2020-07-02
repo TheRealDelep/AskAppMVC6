@@ -20,7 +20,11 @@ namespace AskApp.DAL
             if (optionsBuilder is null)
                 throw new ArgumentNullException(nameof(optionsBuilder));
 
-            optionsBuilder.UseSqlite(@"Data Source=AskAppDB.db;");
+            if (!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder.UseSqlite(@"Data Source=AskAppDB.db;");
+                optionsBuilder.EnableSensitiveDataLogging();
+            }
         }
 
         public DbSet<UserEntity> Users { get; set; }

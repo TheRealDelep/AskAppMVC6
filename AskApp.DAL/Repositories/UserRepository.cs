@@ -7,7 +7,7 @@ using System.Text;
 
 namespace AskApp.DAL
 {
-    class UserRepository : IRepository<UserEntity>
+    public class UserRepository : IRepository<UserEntity>
     {
         private AskAppContext context;
 
