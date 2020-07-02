@@ -1,0 +1,9 @@
+C:\Users\Delep\source\repos\AskApp\AskApp.Cross-Cutting\bin\Debug\netcoreapp3.1\AskApp.Cross-Cutting.deps.json
+C:\Users\Delep\source\repos\AskApp\AskApp.Cross-Cutting\bin\Debug\netcoreapp3.1\AskApp.Cross-Cutting.dll
+C:\Users\Delep\source\repos\AskApp\AskApp.Cross-Cutting\bin\Debug\netcoreapp3.1\AskApp.Cross-Cutting.pdb
+C:\Users\Delep\source\repos\AskApp\AskApp.Cross-Cutting\obj\Debug\netcoreapp3.1\AskApp.Cross-Cutting.AssemblyInfoInputs.cache
+C:\Users\Delep\source\repos\AskApp\AskApp.Cross-Cutting\obj\Debug\netcoreapp3.1\AskApp.Cross-Cutting.AssemblyInfo.cs
+C:\Users\Delep\source\repos\AskApp\AskApp.Cross-Cutting\obj\Debug\netcoreapp3.1\AskApp.Cross-Cutting.csproj.CoreCompileInputs.cache
+C:\Users\Delep\source\repos\AskApp\AskApp.Cross-Cutting\obj\Debug\netcoreapp3.1\AskApp.Cross-Cutting.dll
+C:\Users\Delep\source\repos\AskApp\AskApp.Cross-Cutting\obj\Debug\netcoreapp3.1\AskApp.Cross-Cutting.pdb
+C:\Users\Delep\source\repos\AskApp\AskApp.Cross-Cutting\obj\Debug\netcoreapp3.1\AskApp.Cross-Cutting.csprojAssemblyReference.cache
