@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.DotNet.PlatformAbstractions;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Sqlite;
 using System;
 using System.Threading;
@@ -7,6 +8,10 @@ namespace AskApp.DAL
 {
     public class AskAppContext : DbContext
     {
+        public DbSet<UserEntity> Users { get; set; }
+        public DbSet<MessageEntity> Messages { get; set; }
+        public DbSet<ThreadEntity> Threads { get; set; }
+
         public AskAppContext()
         {
         }
@@ -22,13 +27,9 @@ namespace AskApp.DAL
 
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlite(@"Data Source=AskAppDB.db;");
+                optionsBuilder.UseSqlite(@"Data Source=C:\Users\Delep\source\repos\AskApp\AskApp.DAL\AskAppDB.db;");
                 optionsBuilder.EnableSensitiveDataLogging();
             }
         }
-
-        public DbSet<UserEntity> Users { get; set; }
-        public DbSet<MessageEntity> Messages { get; set; }
-        public DbSet<ThreadEntity> Threads { get; set; }
     }
 }

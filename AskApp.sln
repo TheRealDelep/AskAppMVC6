@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AskApp.Cross-Cutting", "Ask
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AskApp.DAL.Tests", "AskApp.DAL.Tests\AskApp.DAL.Tests.csproj", "{AAFD36EC-F2FC-47CC-A41C-9A94BE049868}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AskApp.BLL", "AskApp.BLL\AskApp.BLL.csproj", "{7C3545B1-5C99-4F4E-B840-4F3105D2945D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AskApp.BLL", "AskApp.BLL\AskApp.BLL.csproj", "{7C3545B1-5C99-4F4E-B840-4F3105D2945D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AskApp.UI.Tests", "AskApp.UI.Tests\AskApp.UI.Tests.csproj", "{9404338F-B69C-4D72-9677-E36AFD3AF4A2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{7C3545B1-5C99-4F4E-B840-4F3105D2945D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7C3545B1-5C99-4F4E-B840-4F3105D2945D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7C3545B1-5C99-4F4E-B840-4F3105D2945D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9404338F-B69C-4D72-9677-E36AFD3AF4A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9404338F-B69C-4D72-9677-E36AFD3AF4A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9404338F-B69C-4D72-9677-E36AFD3AF4A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9404338F-B69C-4D72-9677-E36AFD3AF4A2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

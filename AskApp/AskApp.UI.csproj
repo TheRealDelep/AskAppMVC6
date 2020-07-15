@@ -4,4 +4,9 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\AskApp.BLL\AskApp.BLL.csproj" />
+    <ProjectReference Include="..\AskApp.Cross-Cutting\AskApp.Cross-Cutting.csproj" />
+  </ItemGroup>
+
 </Project>

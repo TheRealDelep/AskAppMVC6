@@ -8,6 +8,7 @@ using System.Threading;
 using Moq;
 using System.Collections.Generic;
 using System;
+using AskApp.Cross_Cutting.TransferObjects;
 
 namespace AskApp.DAL.Tests
 {
@@ -19,11 +20,12 @@ namespace AskApp.DAL.Tests
         {
             var option = new DbContextOptionsBuilder<AskAppContext>()
             .UseInMemoryDatabase(databaseName: MethodBase.GetCurrentMethod().Name)
+            .EnableSensitiveDataLogging()
             .Options;
 
-            var message = new MessageEntity()
+            var message = new MessageTO()
             {
-                Author = new Mock<UserEntity>().Object,
+                Author = new Mock<UserTO>().Object,
                 Title = "Why is this so redundant?",
                 Body = "I mean, this exercice is supposed to be about MVC, not app architecture",
                 Date = DateTime.Now
@@ -36,14 +38,14 @@ namespace AskApp.DAL.Tests
                 // Test Insert
 
                 Assert.AreEqual(0, repo.GetAll().Count);
-                repo.Insert(message);
+                message = repo.Insert(message);
                 context.SaveChanges();
 
                 Assert.AreEqual(1, repo.GetAll().Count);
 
                 // Test Update
 
-                string bodyUpdated = "Well maybe I'll just skip that this time";
+                string bodyUpdated = "But I guess I'll stick to it anyway";
                 message.Body = bodyUpdated;
                 repo.Update(message);
                 context.SaveChanges();

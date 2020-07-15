@@ -1,4 +1,6 @@
 C:\Users\Delep\source\repos\AskApp\AskApp.DAL\bin\Debug\netcoreapp3.1\AskApp.DAL.deps.json
+C:\Users\Delep\source\repos\AskApp\AskApp.DAL\bin\Debug\netcoreapp3.1\AskApp.DAL.runtimeconfig.json
+C:\Users\Delep\source\repos\AskApp\AskApp.DAL\bin\Debug\netcoreapp3.1\AskApp.DAL.runtimeconfig.dev.json
 C:\Users\Delep\source\repos\AskApp\AskApp.DAL\bin\Debug\netcoreapp3.1\AskApp.DAL.dll
 C:\Users\Delep\source\repos\AskApp\AskApp.DAL\bin\Debug\netcoreapp3.1\AskApp.DAL.pdb
 C:\Users\Delep\source\repos\AskApp\AskApp.DAL\bin\Debug\netcoreapp3.1\AskApp.Cross-Cutting.dll
@@ -6,10 +8,8 @@ C:\Users\Delep\source\repos\AskApp\AskApp.DAL\bin\Debug\netcoreapp3.1\AskApp.Cro
 C:\Users\Delep\source\repos\AskApp\AskApp.DAL\obj\Debug\netcoreapp3.1\AskApp.DAL.csprojAssemblyReference.cache
 C:\Users\Delep\source\repos\AskApp\AskApp.DAL\obj\Debug\netcoreapp3.1\AskApp.DAL.AssemblyInfoInputs.cache
 C:\Users\Delep\source\repos\AskApp\AskApp.DAL\obj\Debug\netcoreapp3.1\AskApp.DAL.AssemblyInfo.cs
+C:\Users\Delep\source\repos\AskApp\AskApp.DAL\obj\Debug\netcoreapp3.1\AskApp.DAL.csproj.CoreCompileInputs.cache
 C:\Users\Delep\source\repos\AskApp\AskApp.DAL\obj\Debug\netcoreapp3.1\AskApp.DAL.csproj.CopyComplete
 C:\Users\Delep\source\repos\AskApp\AskApp.DAL\obj\Debug\netcoreapp3.1\AskApp.DAL.dll
 C:\Users\Delep\source\repos\AskApp\AskApp.DAL\obj\Debug\netcoreapp3.1\AskApp.DAL.pdb
-C:\Users\Delep\source\repos\AskApp\AskApp.DAL\bin\Debug\netcoreapp3.1\AskApp.DAL.runtimeconfig.json
-C:\Users\Delep\source\repos\AskApp\AskApp.DAL\bin\Debug\netcoreapp3.1\AskApp.DAL.runtimeconfig.dev.json
 C:\Users\Delep\source\repos\AskApp\AskApp.DAL\obj\Debug\netcoreapp3.1\AskApp.DAL.genruntimeconfig.cache
-C:\Users\Delep\source\repos\AskApp\AskApp.DAL\obj\Debug\netcoreapp3.1\AskApp.DAL.csproj.CoreCompileInputs.cache

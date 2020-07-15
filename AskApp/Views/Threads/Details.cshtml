@@ -1,0 +1,39 @@
+﻿@model AskApp.Cross_Cutting.TransferObjects.ThreadTO
+
+<div>
+    <h4>@Model.Question.Title</h4>
+    <p class="font-italic">Posted by @Model.Question.Author.Name on @Model.Question.Date</p>
+    <p>@Model.Question.Body</p>
+
+    <div>
+        <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#replyForm" aria-expanded="false" aria-controls="collapseExample">
+            Reply
+        </button>
+    </div>
+
+    <div class="collapse" id="replyForm">
+        <div class="container border">
+            <form method="post">
+                <div class="form-group">
+                    <label>Write here your reply</label>
+                    <div>
+                        <textarea class="form-control" type="text" name="body"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" value="Submit" class="btn btn-success" asp-action="Edit" asp-route-Id="@Model.Id"></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    @if (Model.Comments != null)
+    {
+        foreach (var item in Model.Comments)
+        {
+            <div class="card card-body"> @item.Body</div>
+            <div class="card card-footer"> Posted by @item.Author.Name on @item.Date</div>
+        }
+    }
+</div>

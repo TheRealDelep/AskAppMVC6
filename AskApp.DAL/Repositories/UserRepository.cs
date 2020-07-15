@@ -1,13 +1,15 @@
 ﻿using AskApp.Cross_Cutting;
+using AskApp.Cross_Cutting.Interfaces;
+using AskApp.Cross_Cutting.TransferObjects;
+using AskApp.DAL.Extensions;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace AskApp.DAL
 {
-    public class UserRepository : IRepository<UserEntity>
+    public class UserRepository : IUserRepository
     {
         private AskAppContext context;
 
@@ -16,38 +18,53 @@ namespace AskApp.DAL
             this.context = context;
         }
 
-        public void Delete(UserEntity entity)
+        public UserTO GetDefaultUser()
         {
-            if (GetById(entity.Id) != null)
+            try
             {
-                context.Users.Remove(entity);
+                return context.Users.FirstOrDefault(x => x.Role == UserRole.Guest).ToTO();
             }
-            else
+            catch (NullReferenceException)
             {
-                throw new ArgumentException("Cannot find item to delete");
+                return Insert(UserTO.DefaultUser);
             }
         }
 
-        public List<UserEntity> GetAll()
+        public void Delete(UserTO entity)
         {
-            return context.Users.ToList();
+            var attached = context.Users.Find(entity.Id);
+            context.Users.Remove(attached);
         }
 
-        public UserEntity GetById(int Id)
+        public List<UserTO> GetAll()
+            => context.Users
+                .AsNoTracking()
+                .Select(x => x.ToTO())
+                .ToList();
+
+        public UserTO GetById(int Id)
+            => context.Users
+                .AsNoTracking()
+                .FirstOrDefault(x => x.Id == Id)
+                .ToTO();
+
+        public UserTO Insert(UserTO entity)
         {
-            return context.Users.Find(Id);
+            if (entity.Role == UserRole.Guest)
+            {
+                if (context.Users.FirstOrDefault(x => x.Role == UserRole.Guest) != null)
+                {
+                    return GetDefaultUser();
+                }
+            }
+            return context.Users.Add(entity.ToEntity()).Entity.ToTO();
         }
 
-        public void Insert(UserEntity entity)
+        public void Update(UserTO entity)
         {
-            context.Users.Add(entity);
-        }
-
-        public void Update(UserEntity entity)
-        {
-            context.Users.Attach(entity);
-            context.Entry(entity).State = EntityState.Modified;
-            context.SaveChanges();
+            var attached = context.Users.Find(entity.Id);
+            attached.UpdateFromDetached(entity.ToEntity());
+            context.Entry(attached).State = EntityState.Modified;
         }
     }
 }

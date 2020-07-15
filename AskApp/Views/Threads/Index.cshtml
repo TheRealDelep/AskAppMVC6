@@ -1,0 +1,22 @@
+﻿@model AskApp.UI.Models.ThreadsVM
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <div class="text-left">
+
+        <a asp-controller="Threads" asp-action="Create" class="btn btn-success">Ask Something</a> </p>
+    </div>
+
+    @if (Model != null)
+    {
+        foreach (var item in Model.Threads)
+        {
+            <div class="card card-header text-left">
+                <a asp-controller="Threads" asp-action="Details" asp-route-id="@item.Question.Id">@item.Question.Title</a>
+            </div>
+            <div class="card-footer">
+                <div class="text-left"> Posted by @item.Question.Author.Name On @item.Question.Date</div>
+            </div>
+        }
+    }
+</div>

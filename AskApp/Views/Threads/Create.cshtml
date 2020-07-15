@@ -1,0 +1,25 @@
+﻿@model AskApp.Cross_Cutting.TransferObjects.ThreadTO
+
+<div class="text-left">
+    <h4>So, What's bothering you?</h4>
+
+    <form method="post">
+        <div class="form-group">
+            <label>Title</label>
+            <div>
+                <input type="text" name="title" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Body</label>
+            <div>
+                <textarea class="form-control" type="text" name="body"></textarea>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="Submit" class="btn btn-success" />
+        </div>
+    </form>
+</div>

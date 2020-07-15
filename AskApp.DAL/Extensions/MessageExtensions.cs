@@ -1,6 +1,7 @@
 ﻿using AskApp.Cross_Cutting.TransferObjects;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace AskApp.DAL.Extensions
@@ -30,5 +31,19 @@ namespace AskApp.DAL.Extensions
                 Date = message.Date
             };
         }
+
+        public static void UpdateFromDetached(this MessageEntity attached, MessageEntity dettached)
+        {
+            attached.Author = dettached.Author;
+            attached.Title = dettached.Title;
+            attached.Body = dettached.Body;
+            attached.Date = dettached.Date;
+        }
+
+        public static List<MessageTO> ToTO(this List<MessageEntity> messages)
+            => messages.Select(x => x.ToTO()).ToList();
+
+        public static List<MessageEntity> ToEntity(this List<MessageTO> messages)
+            => messages.Select(x => x.ToEntity()).ToList();
     }
 }

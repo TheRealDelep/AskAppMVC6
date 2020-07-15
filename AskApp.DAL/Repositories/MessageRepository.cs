@@ -1,47 +1,61 @@
 ﻿using AskApp.Cross_Cutting;
+using AskApp.Cross_Cutting.TransferObjects;
+using AskApp.DAL.Extensions;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 
 namespace AskApp.DAL.Repositories
 {
-    public class MessageRepository : IRepository<MessageEntity>
+    public class MessageRepository : IRepository<MessageTO>
     {
         private AskAppContext context;
-        private bool disposedValue;
 
         public MessageRepository(AskAppContext context)
         {
             this.context = context;
         }
 
-        public void Delete(MessageEntity entity)
+        public void Delete(MessageTO entity)
         {
-            context.Messages.Remove(entity);
+            var attached = context.Messages.Find(entity.Id);
+            context.Messages.Remove(attached);
         }
 
-        public List<MessageEntity> GetAll()
-        {
-            return context.Messages.Include(x => x.Author).ToList();
-        }
+        public List<MessageTO> GetAll()
+            => context.Messages
+                .Include(x => x.Author)
+                .AsNoTracking()
+                .Select(x => x.ToTO())
+                .ToList();
 
-        public MessageEntity GetById(int Id)
-        {
-            return context.Messages.Include(x => x.Author).FirstOrDefault(x => x.Id == Id);
-        }
+        public MessageTO GetById(int Id)
+            => context.Messages
+                .AsNoTracking()
+                .Include(x => x.Author)
+                .FirstOrDefault(x => x.Id == Id)
+                .ToTO();
 
-        public void Insert(MessageEntity entity)
+        public MessageTO Insert(MessageTO entity)
         {
-            context.Messages.Add(entity);
-        }
+            var message = entity.ToEntity();
 
-        public void Update(MessageEntity entity)
-        {
-            context.Messages.Attach(entity);
-            context.Entry(entity).State = EntityState.Modified;
+            message.Author = context.Users.FirstOrDefault(x => x.Id == entity.Author.Id);
+
+            var result = context.Messages.Add(message);
             context.SaveChanges();
+            return GetById(result.Entity.Id);
+        }
+
+        public void Update(MessageTO entity)
+        {
+            var attached = context.Messages.Find(entity.Id);
+            attached.UpdateFromDetached(entity.ToEntity());
+            attached.Author = context.Users.Find(attached.Author.Id);
+            context.Entry(attached).State = EntityState.Modified;
         }
     }
 }

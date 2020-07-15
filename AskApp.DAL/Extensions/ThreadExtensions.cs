@@ -10,24 +10,43 @@ namespace AskApp.DAL.Extensions
     {
         public static ThreadTO ToTO(this ThreadEntity thread)
         {
-            return new ThreadTO()
+            var result = new ThreadTO()
             {
                 Id = thread.Id,
                 Question = thread.Question.ToTO(),
-                Comments = thread.Comments.Select(x => x.ToTO()).ToList(),
                 IsClosed = thread.IsClosed
             };
+
+            if (thread.Comments != null)
+            {
+                result.Comments = thread.Comments.ToTO();
+            }
+
+            return result;
         }
 
         public static ThreadEntity ToEntity(this ThreadTO thread)
         {
-            return new ThreadEntity()
+            var result = new ThreadEntity()
             {
                 Id = thread.Id,
                 Question = thread.Question.ToEntity(),
-                Comments = thread.Comments.Select(x => x.ToEntity()).ToList(),
                 IsClosed = thread.IsClosed
             };
+
+            if (thread.Comments != null)
+            {
+                result.Comments = thread.Comments.ToEntity();
+            }
+
+            return result;
+        }
+
+        public static void UpdateFromDetached(this ThreadEntity attached, ThreadEntity dettached)
+        {
+            attached.Question = dettached.Question;
+            attached.Comments = dettached.Comments;
+            attached.IsClosed = dettached.IsClosed;
         }
     }
 }

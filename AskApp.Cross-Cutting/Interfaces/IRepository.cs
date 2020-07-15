@@ -10,7 +10,7 @@ namespace AskApp.Cross_Cutting
 
         TEntity GetById(int Id);
 
-        void Insert(TEntity entity);
+        TEntity Insert(TEntity entity);
 
         void Delete(TEntity entity);
 

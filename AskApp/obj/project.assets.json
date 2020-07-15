@@ -1117,7 +1117,8 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "AskApp.BLL >= 1.0.0"
+      "AskApp.BLL >= 1.0.0",
+      "AskApp.Cross-Cutting >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -1155,6 +1156,9 @@
           "projectReferences": {
             "C:\\Users\\Delep\\source\\repos\\AskApp\\AskApp.BLL\\AskApp.BLL.csproj": {
               "projectPath": "C:\\Users\\Delep\\source\\repos\\AskApp\\AskApp.BLL\\AskApp.BLL.csproj"
+            },
+            "C:\\Users\\Delep\\source\\repos\\AskApp\\AskApp.Cross-Cutting\\AskApp.Cross-Cutting.csproj": {
+              "projectPath": "C:\\Users\\Delep\\source\\repos\\AskApp\\AskApp.Cross-Cutting\\AskApp.Cross-Cutting.csproj"
             }
           }
         }
